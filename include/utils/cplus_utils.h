@@ -30,7 +30,7 @@
 
 // Crea un alias per il puntatore a un tipo
 // Esempio: CREATE_OBJ(Point) genera typedef Point* Point_o;
-#define CREATE_OBJ(type) typedef type* type##_o;
+#define CREATE_OBJ(type) typedef type* type##_o
 
 // Macro per creare un oggetto usando il costruttore parametrico
 // Espande in: (class_name*)class_name_new(__VA_ARGS__)
