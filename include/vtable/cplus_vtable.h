@@ -19,4 +19,12 @@
 #define ADD_METHODS(classname, ...) \
     const classname##VTable classname##_vtable = { __VA_ARGS__ }
 
+// Macro per ricavare il nome della vtable di una classe generica
+// Esempio: VTABLE(Point) --> Point_vtable
+#define VTABLE(classname) classname##_vtable
+
+// Macro epr ricaavre l'indirizzo della vtable di una classe generica
+// Esempio ADDRVT(Point) --> &VTABLE(Point) --> &Point_vtable
+#define ADDRVT(classname) &VTABLE(classname)
+
 #endif // CPLUS_VTABLE_H

@@ -32,7 +32,7 @@ ADD_METHODS(Point,
 // Definizione del costruttore di Point con parametri x e y
 DEF_CTOR(Point, int x, int y) {
     // Allocazione di un nuovo oggetto Point con spazio anche per la parte privata
-    Point* p = NEW_ALLOC(Point, PointPrivate, &Point);
+    Point* p = NEW_ALLOC(PBLC_SPACE(Point), PRVT_SPACE(Point), ADDRVT(Point));
 
     if (!p) return NULL;  // Se l'allocazione fallisce, restituisce NULL
 

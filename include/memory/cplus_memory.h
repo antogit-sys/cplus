@@ -19,7 +19,7 @@ void* new_alloc(size_t pubsize, size_t privsize, const void* vtable);
 //    si espande in:
 //    (Point*)new_alloc(sizeof(Point), sizeof(PointPrivate), Point_vtable)
 #define NEW_ALLOC(Class, privsize, vt) \
-    (Class*)new_alloc(sizeof(Class), sizeof(privsize), vt##_vtable)
+    (Class*)new_alloc(sizeof(Class), sizeof(privsize), vt)
 
 // Macro per deallocare un oggetto e azzerare il puntatore
 #define DELETE(obj) do { \
