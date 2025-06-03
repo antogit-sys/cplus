@@ -50,6 +50,11 @@
 #define ADD_CTOR(class_name, ...) \
     DEF_CTOR(class_name, __VA_ARGS__);
 
+// PRVR => Macro per ricavare lo spazio privato della classe "classname"
+// Esempio: PRVT_SPACE(Point) --> PointPrivate
+//
+// PBCLC => Macro simbolica per leggibilità, restituisce la classe presa in input
+// Esempio: PBLC_SPACE(Point) --> Point (già pubblica)
 #define PRVT_SPACE(classname) CONCAT(classname,Private)
 #define PBLC_SPACE(classname) classname
 
