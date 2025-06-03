@@ -6,7 +6,7 @@
 // ovvero la struct che rappresenta l'oggetto visibile all'esterno.
 // Include il puntatore alla vtable per i metodi virtuali.
 
-#define CREATE_PUBLIC_INTERFACE(classname) \
+#define CREATE_PUBLIC_CLASS(classname) \
     typedef struct classname classname; /* Dichiarazione incompleta per uso come tipo puntatore */ \
     typedef struct classname##VTable classname##VTable; /* Dichiarazione incompleta della vtable associata */ \
     struct classname { \
@@ -15,7 +15,7 @@
         
 // --- Fine dell'interfaccia pubblica della classe ---
 // Serve a chiudere la struct pubblica aperta sopra.
-#define END_PUBLIC_INTERFACE \
+#define END_PUBLIC_CLASS \
     };
 
 
@@ -39,6 +39,8 @@
 #define EXTENDS(baseclass) \
     baseclass base;
 
+// --- Macro simbolica per leggiblità --- 
+#define NOTHING_ATTRIBUTS
 
 #endif // CPLUS_CLASS_H
 

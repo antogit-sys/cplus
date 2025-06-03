@@ -5,21 +5,21 @@
 
 // Definizione dell'interfaccia pubblica della classe Point
 // Qui dichiariamo i membri dati visibili all'esterno (public)
-CREATE_PUBLIC_INTERFACE(Point)
+CREATE_PUBLIC_CLASS(Point)
     int x;  // Coordinata X del punto
     int y;  // Coordinata Y del punto
-END_PUBLIC_INTERFACE       // Fine della definizione dell'interfaccia pubblica
-
+END_PUBLIC_CLASS    // Fine della definizione dell'interfaccia pubblica
+                            
 // Dichiarazione della vtable (tavola dei metodi virtuali) della classe Point
 DECLARE_VTABLE(Point){
     // Metodo virtuale per stampare le coordinate del punto
-    METHOD(void, print, Point*);
+    void METHOD(print, Point*);
 
     // Metodo virtuale per impostare il valore "segreto" (esempio di metodo con parametro addizionale)
-    METHOD(void, setsec, Point*, int);
+    void METHOD(setsec, Point*, int);
 
     // Metodo virtuale per deallocare (distruggere) l'oggetto Point
-    METHOD(void, delete, Point*);
+    void METHOD(delete, Point*);
 };
 
 // Creazione di un typedef per il puntatore all'oggetto Point, alias Point_o
