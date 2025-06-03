@@ -3,7 +3,8 @@
 
 // Macro per definire un metodo virtuale nella vtable
 // Definisce un puntatore a funzione con il nome del metodo, tipo di ritorno, tipo del parametro 'self' e altri parametri opzionali
-// Esempio: METHOD(void, print, Point*) diventa: void (*print)(Point* self)
+// Esempio: void METHOD(print, Point*) diventa: void (*print)(Point* self)
+
 #define METHOD(func_name, self_type, ...) \
     (*func_name)(self_type self, ##__VA_ARGS__)
 
